@@ -1,5 +1,5 @@
 # company-c-preprocessor
-* Company backend for c/c++ prerpocessor.
+* Company backend for c/c++ preprocessor.
 
 ** Installation
 
