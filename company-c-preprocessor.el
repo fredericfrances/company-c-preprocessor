@@ -43,7 +43,7 @@
   '(
     (c-mode     . "#\\([a-z]+\\)")
     (c++-mode   . "#\\([a-z]+\\)"))
-  "Assoc list of regex triggering auto completion.")
+  "Assoc list of regex triggering auto completion depending on major modes.")
   
 (defvar company-c-preprocessor-alist
   ;; Please contribute corrections or additions.
