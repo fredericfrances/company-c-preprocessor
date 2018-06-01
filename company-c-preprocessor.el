@@ -54,7 +54,7 @@
   "Alist mapping major-modes to sorted c-preprocessor for `company-c-preprocessor'.")
 
 ;;;###autoload
-(defun company-keywords (command &optional arg &rest ignored)
+(defun company-c-preprocessor (command &optional arg &rest ignored)
   "`company-mode' backend for programming language keywords."
   (when (and (assoc major-mode company-c-preprocessor-modes)
              (looking-back (cdr (assoc major-mode company-c-preprocessor-trigger-rx))
