@@ -24,7 +24,7 @@
 
 ;;; Commentary:
 ;;
-;;  This is mostly inspired from companc-keywords and company-c-headers.
+;;  This is mostly inspired from company-keywords and company-c-headers.
 
 ;;; Code:
 (require 'company)
@@ -56,21 +56,21 @@
 ;;;###autoload
 (defun company-c-preprocessor (command &optional arg &rest ignored)
   "`company-mode' backend for programming language keywords."
+  (interactive (list 'interactive))
   (when (and (assoc major-mode company-c-preprocessor-modes)
              (looking-back (cdr (assoc major-mode company-c-preprocessor-trigger-rx))
                            (line-beginning-position)))
-    (interactive (list 'interactive))
     (cl-case command
-      (interactive (company-begin-backend 'company-keywords))
-      (prefix (and (assq major-mode company-keywords-alist)
+      (interactive (company-begin-backend 'company-c-preprocessor))
+      (prefix (and (assq major-mode company-c-preprocessor-alist)
                    (not (company-in-string-or-comment))
                    (or (company-grab-symbol) 'stop)))
       (candidates
        (let ((completion-ignore-case nil)
-             (symbols (cdr (assq major-mode company-keywords-alist))))
+             (symbols (cdr (assq major-mode company-c-preprocessor-alist))))
          (all-completions arg (if (consp symbols)
                                   symbols
-                                (cdr (assq symbols company-keywords-alist))))))
+                                (cdr (assq symbols company-c-preprocessor-alist))))))
       (sorted t))))
 
 (provide 'company-c-preprocessor)
